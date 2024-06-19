@@ -1,4 +1,4 @@
-### A repo for our new gcp devops project
+# A repo for our new gcp devops project
 
 steps to create a new repo
 1. login to github and create a new repository [ select private or public ]
