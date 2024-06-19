@@ -1,0 +1,17 @@
+go to cmd line and create a new branch with below command
+C:\pk\gcp\gcp-devops-project>git checkout -b "feature/task-02-branch"
+
+A branch gets created, run below command to see the branches
+git branch
+output: 
+* feature/task-02-branch
+main
+
+step-3: modify the readme.md file 
+
+step-4: commit the file
+git commit -m "Updated readme.md file"
+
+step-5: git push origin feature/task-02-branch
+
+
