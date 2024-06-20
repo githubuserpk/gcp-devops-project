@@ -1,9 +1,9 @@
 steps:
 - name: 'docker'
-  args: ['build', '-t', 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project', '.']
+  args: ['build', '-t', 'eu.gcr.io/pkdeltaai-05/gcp-devops-project', '.']
 logsBucket: 'gs://pkdeltaai-05-build-logs-bucket'
 images: 
-- 'europe-docker.pkg.dev/pkdeltaai-05/gcp-devops-project/gcp-devops-project'
+- 'eu.gcr.io/pkdeltaai-05/gcp-devops-project/gcp-devops-project'
 options:
  logging: GCS_ONLY
 
