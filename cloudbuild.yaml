@@ -3,4 +3,6 @@ steps:
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcp-devops-project', '.']
 images: 
 - 'gcr.io/$PROJECT_ID/gcp-devops-project'
+build:
+  logging: CLOUD_LOGGING_ONLY
 
