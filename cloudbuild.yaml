@@ -1,19 +1,25 @@
+
+
+
+
+
 steps:
 - name: 'docker'
-  args: ['build', '-t', 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project/myimage', '.']
-logsBucket: 'gs://pkdeltaai-05-build-logs-bucket'
+  args: ['build', '-t', 'gcr.io/pkdeltaai-05/gcp-devops-project', '.']
 images: 
-- 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project/myimage'
+- 'gcr.io/pkdeltaai-05/gcp-devops-project'
 options:
- logging: GCS_ONLY
+ logging: CLOUD_LOGGING_ONLY
 
 
 
+#Not working some issue, it is not able to find the image.  It is for artifact registry 
 
 # steps:
 # - name: 'docker'
-#   args: ['build', '-t', 'gcr.io/pkdeltaai-05/gcp-devops-project', '.']
+#   args: ['build', '-t', 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project/myimage', '.']
+# logsBucket: 'gs://pkdeltaai-05-build-logs-bucket'
 # images: 
-# - 'gcr.io/pkdeltaai-05/gcp-devops-project'
+# - 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project/myimage'
 # options:
-#  logging: CLOUD_LOGGING_ONLY
+#  logging: GCS_ONLY
