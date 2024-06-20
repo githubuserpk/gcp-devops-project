@@ -1,15 +1,24 @@
 
 
-
-
-
 steps:
 - name: 'docker'
-  args: ['build', '-t', 'gcr.io/pkdeltaai-05/gcp-devops-project', '.']
+  args: ['build', '-t', 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project', '.']
+logsBucket: 'gs://pkdeltaai-05-build-logs-bucket'
 images: 
-- 'gcr.io/pkdeltaai-05/gcp-devops-project'
+- 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project'
 options:
  logging: CLOUD_LOGGING_ONLY
+
+
+
+#The below script works, commenting it for trying other options
+# steps:
+# - name: 'docker'
+#   args: ['build', '-t', 'gcr.io/pkdeltaai-05/gcp-devops-project', '.']
+# images: 
+# - 'gcr.io/pkdeltaai-05/gcp-devops-project'
+# options:
+#  logging: CLOUD_LOGGING_ONLY
 
 
 
