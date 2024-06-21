@@ -1,13 +1,23 @@
 
 
 steps:
-- name: 'docker'
-  args: ['build', '-t', 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project', '.']
+  # build the container image
+- name: "gcr.io/cloud-builders/docker"
+  args: ["build", "-t", "gcr.io/pkdeltaai-05/gcpdevops", "."]
+  # push container image
+- name: "gcr.io/cloud-builders/docker"
+  args: ["push", "gcr.io/pkdeltaai-05/gcpdevops"]
+  # deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=gke.yaml
+  - --image=gcr.io/pkdeltaai-05/gcpdevops
+  - --location=us-central1-c
+  - --cluster=gcp-devops-project
+  - --namespace=gcp-devops-prod
 
-images: 
-- 'europe-west4-docker.pkg.dev/pkdeltaai-05/gcp-devops-project'
-options:
- logging: CLOUD_LOGGING_ONLY
+
 
 
 
