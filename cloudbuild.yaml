@@ -1,6 +1,9 @@
 
 
 steps:
+
+serviceAccount: 'projects/pkdeltaai-05/serviceAccounts/874088112023-compute@developer.gserviceaccount.com'
+
   # build the container image
 - name: "gcr.io/cloud-builders/docker"
   args: ["build", "-t", "gcr.io/pkdeltaai-05/gcp-devops-project", "."]
@@ -16,6 +19,7 @@ steps:
   - --location=us-central1
   - --cluster=gcp-devops-project
   - --namespace=gcp-devops-prod
+
 
 options:
   logging: CLOUD_LOGGING_ONLY
